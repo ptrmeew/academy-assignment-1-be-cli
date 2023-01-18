@@ -82,14 +82,14 @@ export const executeSet = async (dataSource: DataSource, path: string, options?:
         const files = filesInFolder(__dirname + '/../' + item.replace('**/*.ts', ''));
 
         for(const file of files) {
-          const module = await import(__dirname + '/../populate/scripts' + file);
+          const module = await import(__dirname + '/../' + item.replace('**/*.ts', '') + file);
           await module.execute(manager);
         }
       } else if(item.endsWith('**/*.sql')) {
-        const files = filesInFolder(__dirname + '/../' + item.replace('**/*.sql', ''));
+        const files = filesInFolder(__dirname + '/../../../' + item.replace('**/*.sql', ''));
 
         for(const file of files) {
-          const sql = fs.readFileSync(__dirname + '/../../../SQL' + file);
+          const sql = fs.readFileSync(__dirname + '/../../../' + item.replace('**/*.sql', '') + file);
           await manager.query(sql.toString());
         }
       } else if (item.endsWith('.ts')) {
