@@ -1,0 +1,39 @@
+{
+  "devDependencies": {
+    "@types/inquirer": "^8.0.0",
+    "@types/node": "^16.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.5",
+    "@types/random-seed": "^0.3.3",
+    "dotenv": "^16.0.3",
+    "inquirer": "^8.0.0",
+    "openapi-typescript": "^5.4.1",
+    "pg": "^8.4.0",
+    "random-seed": "^0.3.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "0.3.10"
+  },
+  "scripts": {
+    "eslint:fix": "eslint --fix .",
+    "prettier": "prettier --write .",
+    "sync": "ts-node src/actions/sync.ts",
+    "populate": "ts-node src/actions/populate.ts",
+    "sql": "ts-node src/actions/sql.ts",
+    "populate:repeat": "ts-node src/actions/populate.ts --latest",
+    "sql:repeat": "ts-node src/actions/sql.ts --latest",
+    "clear": "ts-node src/actions/clear.ts",
+    "drop": "ts-node src/actions/drop.ts",
+    "set": "ts-node src/actions/sets.ts",
+    "help": "ts-node src/actions/help.ts"
+  }
+}
