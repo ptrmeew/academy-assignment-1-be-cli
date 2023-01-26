@@ -23,6 +23,9 @@ export class Profile {
   @Column()
   age: number;
 
+  @Column({ nullable: true })
+  avatar_path: string;
+
   @Column({ default: false })
   subscription_active: boolean;
 

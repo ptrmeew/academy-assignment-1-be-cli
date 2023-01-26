@@ -44,7 +44,7 @@ export const drop = async (dataSource: DataSource) => {
 
  await dataSource.transaction(async (manager) => {
    for (const tableName of tableNames) {
-     await manager.query(`DROP TABLE "${tableName}" RESTART IDENTITY CASCADE;`);
+     await manager.query(`DROP TABLE "${tableName}" CASCADE;`);
    }
  });
 
